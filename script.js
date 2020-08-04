@@ -6,10 +6,16 @@ document.getElementById("pin-generate-button").addEventListener("click", functio
     document.getElementById("pin-OTP").value = Math.floor(1000 + Math.random() * 8999);
 })
 
+//BackSpace Button Activity
+function backspace(){
+    var value = document.getElementById("pin-entry").value;
+    document.getElementById("pin-entry").value = value.substr(0, value.length - 1);
+}
+
 //Clear Button Activity
 function allClear(){
     document.getElementById("pin-entry").value="";
-  }
+}
 
 //Number Buttons(0-9) Activity
 function numberButton(num) {
