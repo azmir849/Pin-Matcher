@@ -11,3 +11,19 @@ document.getElementById("pin-generate-button").addEventListener("click", functio
 function numberButton(num) {
     document.getElementById('pin-entry').value = document.getElementById('pin-entry').value + num;
 }
+
+//Submit Button Activity
+function submitButton() {
+    let pinInput = document.getElementById('pin-entry').value;
+    let generatedPin = document.getElementById('pin-OTP').value;
+    if (pinInput == "" && generatedPin == "") {
+        alert('Please generate correct pin or your pin number is empty!!');
+    } else if (pinInput == generatedPin) {
+        document.getElementById('match-pin').style.display = 'block';
+        document.getElementById('misMatch-pin').style.display = 'none';
+    } else {
+        document.getElementById('misMatch-pin').style.display = 'block';
+        document.getElementById('match-pin').style.display = 'none';
+        tryLeft();
+    }
+}
